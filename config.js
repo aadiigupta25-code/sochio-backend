@@ -13,7 +13,7 @@ module.exports = {
   projectName: process.env.PROJECT_NAME || "Sochio",
 
   //baseURL
-  baseURL: process.env.BASE_URL || "https://sochio-backend.onrender.com/",
+  baseURL: process.env.BASE_URL || "https://sochio.vercel.app/",
 
   //Secret key for API
   secretKey: process.env.API_SECRET_KEY || "sochio-api-secret-2024",

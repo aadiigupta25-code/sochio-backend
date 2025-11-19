@@ -87,10 +87,7 @@ app.get("/*", (req, res) => {
   res.status(200).sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-mongoose.connect(config?.MONGODB_CONNECTION_STRING, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(config?.MONGODB_CONNECTION_STRING);
 
 //socket io
 const http = require("http");
