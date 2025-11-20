@@ -46,7 +46,7 @@ jobs:
 
       - name: Build debug APK
         working-directory: "Source Code/Flutter App/era_shop"
-        run: flutter build apk --debug --verbose
+        run: flutter build apk --debug --no-tree-shake-icons
 
       - name: Rename APK
         working-directory: "Source Code/Flutter App/era_shop"
