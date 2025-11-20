@@ -33,34 +33,34 @@ jobs:
           cache: true
 
       - name: Flutter doctor
-        working-directory: Source Code/Flutter App/era_shop
+        working-directory: "Source Code/Flutter App/era_shop"
         run: flutter doctor -v
 
       - name: Get Flutter dependencies
-        working-directory: Source Code/Flutter App/era_shop
+        working-directory: "Source Code/Flutter App/era_shop"
         run: flutter pub get
 
       - name: Run Flutter analyze
-        working-directory: Source Code/Flutter App/era_shop
+        working-directory: "Source Code/Flutter App/era_shop"
         run: flutter analyze --no-fatal-infos
         continue-on-error: true
 
       - name: Clean build
-        working-directory: Source Code/Flutter App/era_shop
+        working-directory: "Source Code/Flutter App/era_shop"
         run: flutter clean
 
       - name: Build debug APK
-        working-directory: Source Code/Flutter App/era_shop
+        working-directory: "Source Code/Flutter App/era_shop"
         run: flutter build apk --debug --verbose
 
       - name: Rename APK
-        working-directory: Source Code/Flutter App/era_shop
+        working-directory: "Source Code/Flutter App/era_shop"
         run: |
           mkdir -p output
           cp build/app/outputs/flutter-apk/app-debug.apk output/sochio-debug.apk
 
       - name: Get APK info
-        working-directory: Source Code/Flutter App/era_shop
+        working-directory: "Source Code/Flutter App/era_shop"
         run: |
           echo "APK built successfully!"
           ls -lh output/sochio-debug.apk
@@ -70,12 +70,12 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: sochio-android-apk
-          path: Source Code/Flutter App/era_shop/output/sochio-debug.apk
+          path: "Source Code/Flutter App/era_shop/output/sochio-debug.apk"
           retention-days: 30
           if-no-files-found: error
 
       - name: Build summary
-        working-directory: Source Code/Flutter App/era_shop
+        working-directory: "Source Code/Flutter App/era_shop"
         run: |
           echo "### ✅ Build Successful!" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
