@@ -40,11 +40,6 @@ jobs:
         working-directory: "Source Code/Flutter App/era_shop"
         run: flutter pub get
 
-      - name: Run Flutter analyze
-        working-directory: "Source Code/Flutter App/era_shop"
-        run: flutter analyze --no-fatal-infos
-        continue-on-error: true
-
       - name: Clean build
         working-directory: "Source Code/Flutter App/era_shop"
         run: flutter clean

@@ -9,7 +9,7 @@ class ApiService {
   
   static Map<String, String> get _headers => {
     'Content-Type': 'application/json',
-    'Authorization': 'Bearer $_secretKey',
+    'Authorization': _authToken != null ? 'Bearer $_authToken' : 'Bearer $_secretKey',
     'key': _secretKey,
   };
 
